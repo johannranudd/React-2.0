@@ -12,8 +12,8 @@ code {
     monospace;
 }
 
-.listItem {
+/* .listItem {
   display: flex;
   justify-content: space-between;
   width: 25rem;
-}
+} */

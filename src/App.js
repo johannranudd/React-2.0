@@ -1,11 +1,10 @@
-// import logo from './logo.svg';
-// import './App.css';
-import Forms from './components/MultipleInputs';
+// import Forms from './components/forms/MultipleInputs';
+import LoremIpsum from './components/LoremIpsum/LoremIpsum';
 
 function App() {
   return (
     <>
-      <Forms />
+      <LoremIpsum />
     </>
   );
 }
