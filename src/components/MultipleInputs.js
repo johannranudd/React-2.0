@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 
 const MultipleInputs = () => {
   const [person, setPerson] = useState({ firstName: '', email: '', age: '' });
-  const [people, setPeople] = useState([]);
+  const [peopleList, setPeopleList] = useState([]);
 
   const handleChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
     setPerson({ ...person, [name]: value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (person.firstName && person.email && person.age) {
       const newPerson = { ...person, id: new Date().getTime().toString() };
-      setPeople([...people, newPerson]);
+      setPeopleList([...peopleList, newPerson]);
       setPerson({ firstName: '', email: '', age: '' });
     }
   };
+
   return (
     <article>
       <form action=''>
@@ -41,7 +43,7 @@ const MultipleInputs = () => {
           />
         </div>
         <div className='form-control'>
-          <label htmlFor='age'>Name : </label>
+          <label htmlFor='age'>Age : </label>
           <input
             type='text'
             id='age'
@@ -50,11 +52,12 @@ const MultipleInputs = () => {
             onChange={handleChange}
           />
         </div>
+
         <button type='submit' onClick={handleSubmit}>
           submit
         </button>
       </form>
-      {people.map((item) => {
+      {peopleList.map((item) => {
         const { id, firstName, email, age } = item;
         return (
           <div key={id} className='listItem'>
