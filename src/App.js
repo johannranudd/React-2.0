@@ -1,10 +1,10 @@
 // import Forms from './components/forms/MultipleInputs';
-import LoremIpsum from './components/LoremIpsum/LoremIpsum';
+import CurrentItem from './components/colorGenerator/ColorGen';
 
 function App() {
   return (
     <>
-      <LoremIpsum />
+      <CurrentItem />
     </>
   );
 }

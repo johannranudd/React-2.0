@@ -17,3 +17,16 @@ code {
   justify-content: space-between;
   width: 25rem;
 } */
+
+.color-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.color-card {
+  height: 150px;
+}
+
+.error {
+  border: 2px solid red;
+}
