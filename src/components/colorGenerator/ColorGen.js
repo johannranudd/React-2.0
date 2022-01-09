@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import Values from 'values.js';
 
+// testing
+
 const ColorGen = () => {
   const [color, setColor] = useState('');
   const [error, setError] = useState(false);
