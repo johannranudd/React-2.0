@@ -41,19 +41,37 @@ const ColorGen = () => {
       </section>
       <section className='color-section'>
         {colorArray.map((item, index) => {
-          const { rgb } = item;
-          return (
-            <div
-              className='color-card'
-              key={index}
-              style={{ backgroundColor: `rgb(${rgb})` }}
-            >
-              {rgb}
-            </div>
-          );
+          const { hex } = item;
+          return <SingleColor key={index} {...item} hex={hex} index={index} />;
         })}
       </section>
     </>
+  );
+};
+
+const SingleColor = ({ hex, weight }) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleClick = () => {
+    navigator.clipboard.writeText(`#${hex}`);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
+  };
+
+  return (
+    <article
+      className='color-card'
+      style={{ backgroundColor: `#${hex}` }}
+      onClick={handleClick}
+    >
+      <div className='color-info'>
+        <p>{`${weight}%`}</p>
+        <p>{`#${hex}`}</p>
+        {copied && <p>copied to clipboard</p>}
+      </div>
+    </article>
   );
 };
 
