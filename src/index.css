@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f5f8;
 }
 
 code {
@@ -18,6 +19,12 @@ code {
   width: 25rem;
 } */
 
+/* colors */
+
+/* .controls {
+  display: flex;
+  align-items: center;
+}
 .color-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -33,4 +40,4 @@ code {
 
 .color-info {
   padding: 1rem;
-}
+} */

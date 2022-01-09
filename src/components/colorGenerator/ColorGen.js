@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import Values from 'values.js';
-
-// testing
+import SingleColor from './SingleColor';
+import { StyledDiv } from './Div.styled';
 
 const ColorGen = () => {
   const [color, setColor] = useState('');
@@ -18,25 +18,27 @@ const ColorGen = () => {
       setColorArray(valueColor);
     } catch {
       setError(true);
-      console.log('wtf');
+      console.log(
+        'not a valid color: please enter a color ex: #007300 or blue'
+      );
     }
   };
 
   useEffect(() => {
-    let valueColor = new Values('#b00b69').all(10);
+    let valueColor = new Values('#007300').all(10);
     setColorArray(valueColor);
   }, []);
   return (
-    <>
+    <StyledDiv>
       <section className='controls'>
-        <h2>color generator</h2>
+        <h2>Color Generator</h2>
         <form action='' onSubmit={handleSubmit}>
           <input
             className={error ? `error` : null}
             type='text'
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            placeholder='#b00b69'
+            placeholder='#007300'
           />
           <button type='submit'>Submit</button>
         </form>
@@ -47,33 +49,7 @@ const ColorGen = () => {
           return <SingleColor key={index} {...item} hex={hex} index={index} />;
         })}
       </section>
-    </>
-  );
-};
-
-const SingleColor = ({ hex, weight }) => {
-  const [copied, setCopied] = useState(false);
-
-  const handleClick = () => {
-    navigator.clipboard.writeText(`#${hex}`);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1000);
-  };
-
-  return (
-    <article
-      className='color-card'
-      style={{ backgroundColor: `#${hex}` }}
-      onClick={handleClick}
-    >
-      <div className='color-info'>
-        <p>{`${weight}%`}</p>
-        <p>{`#${hex}`}</p>
-        {copied && <p>copied to clipboard</p>}
-      </div>
-    </article>
+    </StyledDiv>
   );
 };
 
