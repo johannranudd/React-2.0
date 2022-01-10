@@ -1,10 +1,10 @@
 // import Forms from './components/forms/MultipleInputs';
-import CurrentItem from './components/colorGenerator/ColorGen';
+import Test from './components/colorGenerator/Test';
 
 function App() {
   return (
     <>
-      <CurrentItem />
+      <Test />
     </>
   );
 }
