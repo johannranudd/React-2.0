@@ -1,10 +1,10 @@
 // import Forms from './components/forms/MultipleInputs';
-import Test from './components/colorGenerator/Test';
+import ColorGen from './components/colorGenerator/ColorGen';
 
 function App() {
   return (
     <>
-      <Test />
+      <ColorGen />
     </>
   );
 }
